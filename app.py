@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
@@ -10,7 +10,7 @@ def hello_world():  # put application's code here
 
 @app.route('/super_simple')
 def super_simple():
-    return 'Hello from the planetary API!!!'
+    return jsonify(message='Hello from the planetary API!!!')
 
 
 if __name__ == '__main__':
