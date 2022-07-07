@@ -5,7 +5,8 @@ import os
 from flask_marshmallow import Marshmallow
 
 app = Flask(__name__)
-
+basedir = os.path.abspath(os.path.dirname(__file__))
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'planets.db')
 
 @app.route('/')
 def hello_world():  # put application's code here
